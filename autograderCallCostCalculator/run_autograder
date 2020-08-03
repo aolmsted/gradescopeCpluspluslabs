@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/callcoster.cpp /autograder/source/callcoster.cpp
+
+cd /autograder/source
+g++ callcoster.cpp
+
+python3 run_tests.py > /autograder/results/results.json

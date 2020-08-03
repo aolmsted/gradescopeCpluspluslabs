@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/bmimetric.cpp /autograder/source/bmimetric.cpp
+
+cd /autograder/source
+g++ bmimetric.cpp
+
+python3 run_tests.py > /autograder/results/results.json

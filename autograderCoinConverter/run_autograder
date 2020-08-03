@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/coins.cpp /autograder/source/coins.cpp
+
+cd /autograder/source
+g++ coins.cpp
+
+python3 run_tests.py > /autograder/results/results.json
