@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/maxinlst.cpp /autograder/source/maxinlst.cpp
+
+cd /autograder/source
+
+g++ main.cpp maxinlst.cpp
+
+python3 run_tests.py > /autograder/results/results.json

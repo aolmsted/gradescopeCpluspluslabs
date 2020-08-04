@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/fibonacci.cpp /autograder/source/fibonacci.cpp
+
+cd /autograder/source
+g++ fibonacci.cpp
+
+python3 run_tests.py > /autograder/results/results.json
