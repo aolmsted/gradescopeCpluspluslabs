@@ -17,7 +17,10 @@ class TestIntegration(unittest.TestCase):
         mytest = subprocess.Popen('./a.out'.split(),stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf8')
         output, err = mytest.communicate("20\n4\n13\n17\n", 1)
         olower = sanatize(output)
-        self.assertEqual(olower, "the total is 6 dollars and 22 cents")
+        msg = ""
+        if(olower.find(":") > 0):
+          msg = "It looks like you are not matching the prompt exactly"
+        self.assertEqual(olower, "the total is 6 dollars and 22 cents",msg)
         mytest.terminate()
 
     @weight(2)
@@ -27,7 +30,10 @@ class TestIntegration(unittest.TestCase):
         mytest = subprocess.Popen('./a.out'.split(),stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf8')
         output, err = mytest.communicate("20\n4\n13\n16\n", 1)
         olower = sanatize(output)
-        self.assertEqual(olower, "the total is 6 dollars and 21 cents")
+        msg = ""
+        if(olower.find(":") > 0):
+          msg = "It looks like you are not matching the prompt exactly"
+        self.assertEqual(olower, "the total is 6 dollars and 21 cents",msg)
         mytest.terminate()
 
     @weight(2)
@@ -37,7 +43,10 @@ class TestIntegration(unittest.TestCase):
         mytest = subprocess.Popen('./a.out'.split(),stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf8')
         output, err = mytest.communicate("16\n4\n13\n16\n", 1)
         olower = sanatize(output)
-        self.assertEqual(olower, "the total is 5 dollars and 21 cents")
+        msg = ""
+        if(olower.find(":") > 0):
+          msg = "It looks like you are not matching the prompt exactly"
+        self.assertEqual(olower, "the total is 5 dollars and 21 cents",msg)
         mytest.terminate()
 
     @weight(2)
@@ -47,7 +56,10 @@ class TestIntegration(unittest.TestCase):
         mytest = subprocess.Popen('./a.out'.split(),stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf8')
         output, err = mytest.communicate("16\n4\n13\n15\n", 1)
         olower = sanatize(output)
-        self.assertEqual(olower, "the total is 5 dollars and 20 cents")
+        msg = ""
+        if(olower.find(":") > 0):
+          msg = "It looks like you are not matching the prompt exactly"
+        self.assertEqual(olower, "the total is 5 dollars and 20 cents",msg)
         mytest.terminate()
 
     @weight(2)
@@ -57,5 +69,8 @@ class TestIntegration(unittest.TestCase):
         mytest = subprocess.Popen('./a.out'.split(),stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf8')
         output, err = mytest.communicate("16\n4\n13\n14\n", 1)
         olower = sanatize(output)
-        self.assertEqual(olower, "the total is 5 dollars and 19 cents")
+        msg = ""
+        if(olower.find(":") > 0):
+          msg = "It looks like you are not matching the prompt exactly"
+        self.assertEqual(olower, "the total is 5 dollars and 19 cents",msg)
         mytest.terminate()

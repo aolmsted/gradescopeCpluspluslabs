@@ -1,6 +1,6 @@
 import unittest
 from gradescope_utils.autograder_utils.decorators import weight, tags
-import subprocess32 as subprocess
+import subprocess
 
 def sanatize(output):
     return output.lower().replace("\t"," ").replace("enter the day the call started at:","").replace("enter the time the call started at (hhmm):","").replace("enter the duration of the call (in minutes):","").replace("\n"," ").lstrip().rstrip().replace("  "," ")

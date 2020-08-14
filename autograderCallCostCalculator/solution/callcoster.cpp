@@ -5,19 +5,25 @@
 using namespace std;
 
 int main() {
-  int day,duration;
-  string start_time;
+  int duration;
+  string day,start_time;
+  float total;
   cout << "Enter the day the call started at: ";
   cin >> day;
   cout << "Enter the time the call started at (hhmm): ";
   cin >> start_time;  
   cout << "Enter the duration of the call (in minutes): ";
   cin >> duration;   
-  if( day.lower().startswith("sat") or day.lower().startswith("sun"))
+  for(i=0;i<=strlen(day);i++) {
+    day[i] = tolower(day[i]);
+  } 
+  if(day.substr(0,2) = "sat" || day.substr(0,2) = "sun")
     rate = .15;
-elif start_time >= "0800" and start_time <= "1800": 
+  else if(start_time >= "0800" && start_time <= "1800") 
     rate = .40;
-else:
+  else:
     rate = .25;
-total = rate * int(duration)
-print("This call will cost ${0:2.2f} ".format(total))
+  total = rate * duration;
+  printf("This call will cost $%3.2f ",total);
+  return 0
+}
