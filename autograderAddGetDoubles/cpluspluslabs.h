@@ -1,0 +1,1 @@
+double* getDoubles(int numDoubles);
