@@ -13,7 +13,7 @@ void runtest(int testdata) {
    if(data == (testdata + 1))
         printf("Passed All Tests");
      else
-        cout << "Failed test on int: " << testdata << " function returned" << data << '\n';
+        cout << "Failed test on int: " << testdata << " function returned " << data << '\n';
 }
 
 int main(int argc, char** argv) {
