@@ -2,10 +2,10 @@
 
 # Set up autograder files
 
-cp /autograder/submission/remainingwords.cpp /autograder/source/remainingwords.cpp
+cp /autograder/submission/ispalindrome.cpp /autograder/source/ispalindrome.cpp
 
 cd /autograder/source
 
-g++ main.cpp remainingwords.cpp
+g++ main.cpp ispalindrome.cpp
 
 python3 run_tests.py > /autograder/results/results.json

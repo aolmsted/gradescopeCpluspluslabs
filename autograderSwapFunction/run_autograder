@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/swap.cpp /autograder/source/swap.cpp
+
+cd /autograder/source
+
+g++ main.cpp swap.cpp
+
+python3 run_tests.py > /autograder/results/results.json

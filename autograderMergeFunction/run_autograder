@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/merge.cpp /autograder/source/merge.cpp
+
+cd /autograder/source
+
+g++ main.cpp merge.cpp
+
+python3 run_tests.py > /autograder/results/results.json

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/selection.cpp /autograder/source/selection.cpp
+
+cd /autograder/source
+
+g++ main.cpp selection.cpp
+
+python3 run_tests.py > /autograder/results/results.json

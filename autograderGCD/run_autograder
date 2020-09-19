@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/gcd.cpp /autograder/source/gcd.cpp
+
+cd /autograder/source
+
+g++ main.cpp gcd.cpp
+
+python3 run_tests.py > /autograder/results/results.json
