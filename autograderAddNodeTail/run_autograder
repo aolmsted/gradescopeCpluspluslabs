@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/addnodet.cpp /autograder/source/addnodet.cpp
+
+cd /autograder/source
+
+g++ main.cpp addnodet.cpp
+
+python3 run_tests.py > /autograder/results/results.json

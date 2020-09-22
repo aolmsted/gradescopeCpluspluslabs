@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/csvimport2.cpp /autograder/source/csvimport2.cpp
+
+cd /autograder/source
+
+g++ main.cpp csvimport2.cpp 
+
+python3 run_tests.py > /autograder/results/results.json

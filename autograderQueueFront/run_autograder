@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/queue.h /autograder/source/queue.h
+
+cd /autograder/source
+
+g++ main.cpp 
+
+python3 run_tests.py > /autograder/results/results.json
