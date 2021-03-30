@@ -1,1 +1,1 @@
-int avgoflst(int lst[], int size);
+float avgoflst(int lst[], int size);
