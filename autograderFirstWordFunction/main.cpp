@@ -10,7 +10,7 @@ void runtest(string s, string answer) {
    if(firstword(s) == answer)
         printf("Passed All Tests");
      else
-        cout << "Failed test on string: " << s << '\n';
+        cout << "Failed test on string: " << s << " " << " returned " << firstword(s) << "." << '\n';
 }
 
 int main(int argc, char** argv) {
